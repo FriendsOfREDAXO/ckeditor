@@ -1,0 +1,41 @@
+
+ckeditor_title = CKEditor
+ckeditor_main_title = CKEditor für REDAXO
+
+ckeditor_main = Hauptseite
+ckeditor_main_demo = CKEditor Demo
+ckeditor_main_plugins = CKEditor Add-ons
+ckeditor_main_docs = CKEditor Dokumentation
+
+ckeditor_config = Einstellungen
+ckeditor_config_save = Einstellungen speichern
+ckeditor_config_saved = Einstellungen wurden gespeichert!
+
+ckeditor_profiles = Profile
+ckeditor_profiles_norowsmessage = Es wurden keine Profile gefunden
+ckeditor_profiles_column_name = Name
+ckeditor_profiles_column_description = Beschreibung
+ckeditor_profiles_formcaption_add = Profil hinzufügen
+ckeditor_profiles_formcaption_edit = Profil editieren
+ckeditor_profiles_label_name = Name
+ckeditor_profiles_label_description = Beschreibung
+ckeditor_profiles_label_jscode = JavaScript Config Objekt
+ckeditor_profiles_label_smartstrip = Smart Strip (entfernt leere P-Tags und multiple BR-Tags)
+profiles_smartstrip_active = aktiviert
+profiles_smartstrip_not_active = deaktiviert
+
+ckeditor_module = Modul
+ckeditor_help = Hilfe
+ckeditor_help_readme = Readme
+ckeditor_help_changelog = Changelog
+ckeditor_help_license = Lizenz
+
+ckeditor_module_input = Eingabe
+ckeditor_module_output = Ausgabe
+
+ckeditor_js_config_object_syntax_check_1 = Es scheint ein Fehler in Ihrem JavaScript Config Objekt Code zu sein.
+ckeditor_js_config_object_syntax_check_2a = Fehlermeldung:
+ckeditor_js_config_object_syntax_check_2b = in Zeile
+ckeditor_js_config_object_syntax_check_3 = Trotzdem fortfahren?
+ckeditor_js_config_object_syntax_check_4 = Das JavaScript Config Objekt muss mit { beginnen und } enden!
+

@@ -1,0 +1,20 @@
+package: ckeditor 
+version: '4.11.3.1'
+author: RexDude
+supportpage: http://www.redaxo.org/de/forum/
+page:
+    title: 'translate:title'
+    perm: admin[]
+    icon: rex-icon fa-pencil
+    subpages:
+        main: { title: 'translate:main' }
+        profiles: { title: 'translate:profiles' }
+        module: { title: 'translate:module' }
+        help:
+            title: 'translate:help'
+            subpages:
+                readme: { title: 'translate:help_readme' }
+                changelog: { title: 'translate:help_changelog' }
+                license: { title: 'translate:help_license' }
+requires:
+    redaxo: '^5.0'

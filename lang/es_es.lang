@@ -1,0 +1,40 @@
+
+ckeditor_title = CKEditor
+ckeditor_main_title = CKEditor para REDAXO
+
+ckeditor_main = Inicio
+ckeditor_main_demo = Demostración de CKEditor
+ckeditor_main_plugins = CKeditor complementos
+ckeditor_main_docs = Documentación CKEditor
+
+ckeditor_config = Ajustes
+ckeditor_config_save = Guardar los ajustes
+ckeditor_config_saved = Los ajustes se han guardado!
+
+ckeditor_profiles = Perfiles
+ckeditor_profiles_norowsmessage = No hubo perfiles encontrados
+ckeditor_profiles_column_name = Nombre
+ckeditor_profiles_column_description = Descripción
+ckeditor_profiles_formcaption_add = Editar perfil
+ckeditor_profiles_formcaption_edit = Editar perfil
+ckeditor_profiles_label_name = Nombre
+ckeditor_profiles_label_description = Descripción
+ckeditor_profiles_label_jscode = JavaScript objeto de configuración
+ckeditor_profiles_label_smartstrip = Zona Inteligente(con las manos vacías P-tags y varias etiquetas BR)
+profiles_smartstrip_active = Activado
+profiles_smartstrip_not_active = Desactivada
+
+ckeditor_module = Módulo
+ckeditor_help = Ayuda
+ckeditor_help_readme = Léame
+ckeditor_help_changelog = Cambios
+ckeditor_help_license = Licencia
+
+ckeditor_module_input = Entrada
+ckeditor_module_output = Edición
+
+ckeditor_js_config_object_syntax_check_1 = Parece ser un error en tu código de objeto JavaScript Config.
+ckeditor_js_config_object_syntax_check_2a = Mensaje de error:
+ckeditor_js_config_object_syntax_check_2b = En línea
+ckeditor_js_config_object_syntax_check_3 = Continuar de todos modos?
+ckeditor_js_config_object_syntax_check_4 = El objeto de configuración de JavaScript debe finalizar con {y} final
