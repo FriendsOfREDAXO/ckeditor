@@ -56,6 +56,7 @@ $mform->addAttribute('class', 'ckeditor');
 $mform->addAttribute('data-ckeditor-profile', 'lite');
 $mform->addAttribute('data-ckeditor-height', '200'); // optional
 ```
+Auch andere Schreibweisen sind möglich, siehe hierzu die MForm Dokumentation.
 
 CKEditor in MBlock einsetzen
 ----------------------------
@@ -64,9 +65,10 @@ CKEditor in MBlock einsetzen
 $mform->addTextAreaField("$id.0.textarea", array(
 'label'                 => 'Text',
 'class'                 => 'ckeditor',
-'data-ckeditor-profile' => 'lite',
+'data-ckeditor-profile' => 'lite'
 ));
 ```
+Auch andere Schreibweisen sind möglich, siehe hierzu die MBlock Dokumentation.
 
 Custom Styles hinzufügen
 ------------------------
@@ -234,5 +236,5 @@ Lizenz
 Credits
 -------
 
-* CKSource, Xong, webghostx, phoebusryan, skerbis, georgkaser, fietstouring, dergel, prenzlweb, krugar, cukabeka, IngoWinter, JeGr, alexplusde
+* CKSource, Xong, webghostx, phoebusryan, skerbis, georgkaser, fietstouring, dergel, prenzlweb, krugar, cukabeka, IngoWinter, JeGr, alexplusde, RexDude
 
