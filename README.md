@@ -60,10 +60,13 @@ $mform->addAttribute('data-ckeditor-height', '200'); // optional
 CKEditor in MBlock einsetzen
 ----------------------------
 
-Leider gibt es aktuell keine MBlock Kompatibilität. Als Workaround empfehlen sich zwei Möglichkeiten:
-
-1. Man benutzt für MBlock einen zusätzlichen Editor wie den TinyMCE.
-2. Man benutzt anstatt MBlock eine modulbasierte MultiSlice/Block Variante wie z.b. in den Code Snippets des X-Core Addons zu finden ist.
+```php
+$mform->addTextAreaField("$id.0.textarea", array(
+'label'                 => 'Text',
+'class'                 => 'ckeditor',
+'data-ckeditor-profile' => 'lite',
+));
+```
 
 Custom Styles hinzufügen
 ------------------------
