@@ -1,8 +1,9 @@
 CKEditor AddOn - Changelog
 ==========================
 
-### Version 4.11.3.2 - 1. Oktober 2019
+### Version 4.13.0 - 16. Oktober 2019
 
+* Update auf CKEditor v4.13.0 Full
 * Der CKEditor ist nun kompatibel mit MBlock.
 
 ### Version 4.11.3.1 - 19. März 2019
