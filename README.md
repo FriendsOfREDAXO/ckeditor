@@ -63,9 +63,9 @@ CKEditor in MBlock einsetzen
 
 ```php
 $mform->addTextAreaField("$id.0.textarea", array(
-'label'                 => 'Text',
-'class'                 => 'ckeditor',
-'data-ckeditor-profile' => 'lite'
+    'label'                 => 'Text',
+    'class'                 => 'ckeditor',
+    'data-ckeditor-profile' => 'lite'
 ));
 ```
 Auch andere Schreibweisen sind möglich, siehe hierzu die MBlock Dokumentation.
