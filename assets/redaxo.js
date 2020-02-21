@@ -1,7 +1,9 @@
+CKEDITOR.replaceClass = '';
+
 function rex_ckeditor_get_link_from_linkmap() {
   var linkMap = openLinkMap();
 
-  $(linkMap).on('rex:selectLink', function(e, linkurl, linktext) {
+  $(linkMap).on('rex:selectLink', function (e, linkurl, linktext) {
     e.preventDefault();
     linkMap.close();
 
@@ -13,7 +15,7 @@ function rex_ckeditor_get_link_from_linkmap() {
 function rex_ckeditor_get_link_from_mediapool() {
   var mediapool = openMediaPool('ckeditor_medialink');
 
-  $(mediapool).on('rex:selectMedia', function(e, filename) {
+  $(mediapool).on('rex:selectMedia', function (e, filename) {
     e.preventDefault();
     mediapool.close();
 
@@ -23,12 +25,14 @@ function rex_ckeditor_get_link_from_mediapool() {
 }
 
 //CKEDITOR MBLOCK COMPAT
-$(document).on('rex:ready', function(e, container) {
-  container.find('.ckeditor').each(function() {
+$(document).on('rex:ready', function (e, container) {
+
+  container.find('.ckeditor').each(function () {
     rex_ckeditor_init($(this));
   });
+
   // dialog changes
-  CKEDITOR.on('dialogDefinition', function(ev) {
+  CKEDITOR.on('dialogDefinition', function (ev) {
     var dialogName = ev.data.name;
     var dialogTabs = ev.data.definition;
 
@@ -46,7 +50,7 @@ $(document).on('rex:ready', function(e, container) {
         label: 'Medienpool Link',
         align: 'center',
         style: 'display:inline-block; position: absolute; right: 23px; top: 116px;',
-        onClick: function() {
+        onClick: function () {
           rex_ckeditor_get_link_from_mediapool();
         }
       });
@@ -75,7 +79,7 @@ $(document).on('rex:ready', function(e, container) {
       ];
       var url = infoTab.get('url');
       url['className'] = 'rex-url';
-      url['onKeyUp'] = function() {
+      url['onKeyUp'] = function () {
         this.allowOnChange = false;
         var protocolCmb = this.getDialog().getContentElement('info', 'protocol'),
           url = this.getValue(),
@@ -108,11 +112,11 @@ $(document).on('rex:ready', function(e, container) {
               ['https://\u200E', 'https://'],
               ['<andere>', ''] //###lang
             ],
-            setup: function(data) {
+            setup: function (data) {
               if (data.url)
                 this.setValue(data.url.protocol || '');
             },
-            commit: function(data) {
+            commit: function (data) {
               if (!data.url)
                 data.url = {};
 
@@ -124,10 +128,10 @@ $(document).on('rex:ready', function(e, container) {
             label: 'URL', //###lang
             required: true,
             className: 'rex-url',
-            onLoad: function() {
+            onLoad: function () {
               this.allowOnChange = true;
             },
-            onKeyUp: function() {
+            onKeyUp: function () {
               this.allowOnChange = false;
               var protocolCmb = this.getDialog().getContentElement('info', 'protocol'),
                 url = this.getValue(),
@@ -143,11 +147,11 @@ $(document).on('rex:ready', function(e, container) {
 
               this.allowOnChange = true;
             },
-            onChange: function() {
+            onChange: function () {
               if (this.allowOnChange) // Dont't call on dialog load.
                 this.onKeyUp();
             },
-            validate: function() {
+            validate: function () {
               var dialog = this.getDialog();
 
               if (dialog.getContentElement('info', 'linkType') && dialog.getValueOf('info', 'linkType') != 'url')
@@ -164,14 +168,14 @@ $(document).on('rex:ready', function(e, container) {
               var func = CKEDITOR.dialog.validate.notEmpty('URL fehlt'); //###lang
               return func.apply(this);
             },
-            setup: function(data) {
+            setup: function (data) {
               this.allowOnChange = false;
               if (data.url)
                 this.setValue(data.url.url);
               this.allowOnChange = true;
 
             },
-            commit: function(data) {
+            commit: function (data) {
               // IE will not trigger the onChange event if the mouse has been used
               // to carry all the operations #4724
               this.onChange();
@@ -183,7 +187,7 @@ $(document).on('rex:ready', function(e, container) {
               this.allowOnChange = false;
             }
           }],
-          setup: function(data) {
+          setup: function (data) {
             if (!this.getDialog().getContentElement('info', 'linkType'))
               this.getElement().show();
           }
@@ -192,7 +196,7 @@ $(document).on('rex:ready', function(e, container) {
           id: 'internallink',
           label: 'Interner Link',
           style: 'float : right;',
-          onClick: function() {
+          onClick: function () {
             rex_ckeditor_get_link_from_linkmap();
 
           }
@@ -201,7 +205,7 @@ $(document).on('rex:ready', function(e, container) {
           id: 'medialink',
           label: 'Medienpool Link',
           style: 'float : right;',
-          onClick: function() {
+          onClick: function () {
             rex_ckeditor_get_link_from_mediapool();
           }
         }]
@@ -216,29 +220,6 @@ $(document).on('rex:ready', function(e, container) {
     } //endif
   }); // end dialogDefinition
 });
-
-$(document).on('ready', function() {
-  if (typeof mblock_module === 'object') {
-    // add callback for mblock
-    mblock_module.registerCallback('reindex_end', function() {
-      if ($('.ckeditor').length) {
-        if (mblock_module.lastAction === 'add_item') {
-          rex_ckeditor_destroy(mblock_module.affectedItem.find('.ckeditor'));
-          rex_ckeditor_init_all(mblock_module.affectedItem.find('.ckeditor'));
-
-
-
-        }
-      }
-    });
-  }
-});
-
-function rex_ckeditor_init_all(elements) {
-  elements.each(function() {
-    rex_ckeditor_init($(this));
-  });
-}
 
 function rex_ckeditor_init(element) {
   if (!element.next().hasClass('ckeditor')) {
@@ -276,10 +257,8 @@ function rex_ckeditor_init(element) {
     editor = document.getElementById(unique_id);
     CKEDITOR.replace(editor, currentEditorConfig);
 
-
-
     // smart strip/
-    $('form').submit(function() {
+    $('form').submit(function () {
       if ($('.ckeditor-smartstrip').length) {
         var data = CKEDITOR.instances[unique_id].getData();
         var doDataUpdate = false;
@@ -321,27 +300,17 @@ function rex_ckeditor_init(element) {
         return true;
       }
 
-
     });
-
   }
 }
 
-function rex_ckeditor_destroy(elements) {
-  elements.each(function() {
-    let next = $(this).next();
-    if (next.length && (next.hasClass('ck-editor'))) {
-      next.remove();
-    }
-  });
-}
+$(document).on('rex:change', function (e, container) {
 
-function rex_ckeditor_pastinit(element, sub_options) {
-  let next = element.next();
-  if (next.length && next.hasClass('ckeditor')) {
-    let editable = next.find('.ckeditor');
-    if (sub_options[0] != undefined) {
-      sub_options = sub_options[0];
-    }
-  }
-}
+  let textarea = $(container).find('textarea');
+  let editor = $(container).find('.cke');
+  let id = $(editor).attr('id').replace('cke_', '');
+
+  CKEDITOR.instances[id].destroy();
+  rex_ckeditor_init(textarea);
+
+});
