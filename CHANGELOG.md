@@ -1,6 +1,11 @@
 CKEditor AddOn - Changelog
 ==========================
 
+### Version 4.13.1 - 21. Februar 2020
+
+* Update auf CKEditor v4.13.1 Full
+* Der CKEditor friert nun nicht mehr ein bei der Neusortierung in MBlock.
+
 ### Version 4.13.0 - 16. Oktober 2019
 
 * Update auf CKEditor v4.13.0 Full
