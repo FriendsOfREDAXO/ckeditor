@@ -1,7 +1,7 @@
-CKEditor AddOn für REDAXO 5
+CKEditor 4 AddOn für REDAXO
 ===========================
 
-Der [CKEditor](http://ckeditor.com/) für REDAXO inkl. eines Beispielmoduls.
+Der [CKEditor](http://ckeditor.com/) in Version 4 für REDAXO inkl. eines Beispielmoduls.
 
 Features
 --------
