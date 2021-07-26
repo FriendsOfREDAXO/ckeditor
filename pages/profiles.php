@@ -57,6 +57,7 @@ if ($func == '') {
 	$field->setAttribute('class', 'codemirror form-control');
 	$field->setAttribute('id', 'ckeditor-jscode');
 	$field->setAttribute('data-codemirror-mode', 'text/javascript');
+	$field->setAttribute('style', 'height: 420px');
 	$field->setLabel($this->i18n('profiles_label_jscode'));
 
 	$field = $form->addSelectField('smartstrip');

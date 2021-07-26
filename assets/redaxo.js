@@ -1,5 +1,7 @@
 CKEDITOR.replaceClass = '';
 
+
+//CKEDITOR LINKMAP/MEDIAPOOL CONNECT
 function rex_ckeditor_get_link_from_linkmap() {
   var linkMap = openLinkMap();
 
@@ -24,6 +26,7 @@ function rex_ckeditor_get_link_from_mediapool() {
   });
 }
 
+
 //CKEDITOR MBLOCK COMPAT
 $(document).on('rex:ready', function (e, container) {
 
@@ -32,9 +35,16 @@ $(document).on('rex:ready', function (e, container) {
   });
 
   // dialog changes
-  CKEDITOR.on('dialogDefinition', function (ev) {
-    var dialogName = ev.data.name;
-    var dialogTabs = ev.data.definition;
+  CKEDITOR.on('dialogDefinition', function(ev) {
+    var dialogName 	= ev.data.name;
+    var dialogTabs 	= ev.data.definition;
+	
+	
+	// Scroll-Up Fix
+	dialogObj	= ev.data.definition.dialog;
+		dialogObj.on('show', function(){ jQuery('html').addClass('cke_dialog_open'); });
+		dialogObj.on('hide', function(){ jQuery('html').removeClass('cke_dialog_open'); });
+	
 
     // Plugin image ///////////////////////////////////////////////////////
     if (dialogName == 'image') {
@@ -304,13 +314,15 @@ function rex_ckeditor_init(element) {
   }
 }
 
-$(document).on('rex:change', function (e, container) {
+$(document).on('rex:change', function (e, container) {	
+ 	container.parent('div').find('textarea.ckeditor').each(function(){
 
-  let textarea = $(container).find('textarea');
-  let editor = $(container).find('.cke');
-  let id = $(editor).attr('id').replace('cke_', '');
-
-  CKEDITOR.instances[id].destroy();
-  rex_ckeditor_init(textarea);
-
+ 		let ed = $(this).next('.cke');		
+ 		if (ed.length > 0) {
+ 			let id = $(ed).attr('id').replace('cke_', '');	
+ 						
+ 			CKEDITOR.instances[id].destroy();
+ 			rex_ckeditor_init($(this));
+ 		}
+ 	})
 });

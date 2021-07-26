@@ -14,8 +14,10 @@ Features
 * Linkdialog: Unterstützung für Links über REDAXO Linkmap und Medienpool
 * Imagedialog: Unterstützung für Links über REDAXO Medienpool
 * Vereinfachter Tabellen- und Imagedialog
-* Kurzhilfe für REDAXO Redakteure
-
+* Kurzhilfe für REDAXO Redakteure  
+  
+  
+  
 Eigene CKEditor Plugins benutzen
 --------------------------------
 
@@ -219,7 +221,7 @@ Links
 Hinweise
 --------
 
-* Getestet mit REDAXO 5.3
+* Getestet mit REDAXO 5.3 - 5.12.1
 * AddOn-Ordner lautet: `ckeditor`
 
 Changelog
@@ -236,5 +238,5 @@ Lizenz
 Credits
 -------
 
-* CKSource, Xong, webghostx, phoebusryan, skerbis, georgkaser, fietstouring, dergel, prenzlweb, krugar, cukabeka, IngoWinter, JeGr, alexplusde, RexDude
+* CKSource, pschuchmann, iceman-fx, Xong, webghostx, phoebusryan, skerbis, georgkaser, fietstouring, dergel, prenzlweb, krugar, cukabeka, IngoWinter, JeGr, alexplusde, RexDude
 

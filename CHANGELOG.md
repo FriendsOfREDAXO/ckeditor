@@ -1,6 +1,12 @@
 CKEditor AddOn - Changelog
 ==========================
 
+### Version 4.16.1 - 20. Mai 2021
+
+* Update auf CKEditor v4.16.1 Full
+* Fixed: Neusortierung von MBlock in Verbindung mit ckeditor.
+* Stylesheetparser bei Plugins hinzugefügt
+
 ### Version 4.13.1 - 21. Februar 2020
 
 * Update auf CKEditor v4.13.1 Full

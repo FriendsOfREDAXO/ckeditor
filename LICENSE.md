@@ -1,5 +1,5 @@
-CKEditor AddOn - MIT Lizenz
-===========================
+MIT Lizenz
+==========
 
 Copyright (c) 2017 RexDude
 

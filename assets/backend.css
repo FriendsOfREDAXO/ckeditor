@@ -1,27 +1,10 @@
+#rex-page-ckeditor-main #logo { text-align: center; margin-top: 75px; margin-bottom: 25px; }
 
-#rex-page-ckeditor-main #logo {
-	text-align: center;
-	margin-top: 75px;
-	margin-bottom: 25px;
-}
+#rex-page-ckeditor-main #logo img { display: inline-block; }
 
-#rex-page-ckeditor-main #logo img {
-	display: inline-block;
-}
+#rex-ckeditor-lang-strings, .ckeditor, .rex-ckeditor { display: none; }
 
-#rex-ckeditor-lang-strings {
-	display: none;
-}
+.rex-slice-output img[style*="left"] { margin: 0 15px 10px 0; }
+.rex-slice-output img[style*="right"] { margin: 0 0 10px 15px; }
 
-.rex-slice-output img[style*="left"] {
-	margin: 0 15px 10px 0;
-}
-
-.rex-slice-output img[style*="right"] {
-	margin: 0 0 10px 15px;
-}
-
-.ckeditor,
-.rex-ckeditor {
-	display: none;
-}
+body.cke_dialog_open { height: auto; }
