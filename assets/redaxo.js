@@ -27,17 +27,25 @@ function rex_ckeditor_get_link_from_mediapool() {
 }
 
 
-//CKEDITOR MBLOCK COMPAT
+//CKEDITOR MBLOCK / GRIDBLOCK COMPAT
 $(document).on('rex:ready', function (e, container) {
 
-  container.find('.ckeditor').each(function () {
-    rex_ckeditor_init($(this));
-  });
+	container.find('.ckeditor').each(function(){
+		
+		//init only new editor instances
+		ckid = $(this).attr('id');
+		instance = CKEDITOR.instances[ckid];
 
-  // dialog changes
-  CKEDITOR.on('dialogDefinition', function(ev) {
-    var dialogName 	= ev.data.name;
-    var dialogTabs 	= ev.data.definition;
+		if (!instance) {
+			rex_ckeditor_init($(this));
+		}
+	});
+  
+  
+	// dialog changes
+	CKEDITOR.on('dialogDefinition', function(ev) {
+	var dialogName 	= ev.data.name;
+	var dialogTabs 	= ev.data.definition;
 	
 	
 	// Scroll-Up Fix
@@ -236,7 +244,8 @@ function rex_ckeditor_init(element) {
 
     let unique_id = 'ckeditor' + Math.random().toString(16).slice(2);
     element.attr('id', unique_id);
-
+	
+	
     // set config object
     if (element.attr('data-ckeditor-profile') && element.attr('data-ckeditor-profile') in ckProfiles) {
       currentProfileName = element.attr('data-ckeditor-profile');
@@ -262,10 +271,12 @@ function rex_ckeditor_init(element) {
     } else {
       currentEditorConfig.extraPlugins = currentEditorConfig.extraPlugins.replace(/rex_help/g, '');
     }
+	
 
     // init editor
     editor = document.getElementById(unique_id);
     CKEDITOR.replace(editor, currentEditorConfig);
+	
 
     // smart strip/
     $('form').submit(function () {
@@ -316,7 +327,6 @@ function rex_ckeditor_init(element) {
 
 $(document).on('rex:change', function (e, container) {	
  	container.parent('div').find('textarea.ckeditor').each(function(){
-
  		let ed = $(this).next('.cke');		
  		if (ed.length > 0) {
  			let id = $(ed).attr('id').replace('cke_', '');	
