@@ -3,8 +3,8 @@ CKEditor AddOn - Changelog
 
 ### Version 4.20.2 - 03.03.2023
 
-* Update auf CKEditor v4.16.2 Full
-* Fixed: Einbindung multipler CKEditoren in MBlock / Gridblock
+* Update auf CKEditor v4.20.2 Full
+* Fixed: Linkmap öffnete sich immer nur in der ersten Sprache
 
 ### Version 4.16.2 - 12. August 2021
 
