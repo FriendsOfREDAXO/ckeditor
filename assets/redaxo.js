@@ -3,15 +3,21 @@ CKEDITOR.replaceClass = '';
 
 //CKEDITOR LINKMAP/MEDIAPOOL CONNECT
 function rex_ckeditor_get_link_from_linkmap() {
-  var linkMap = openLinkMap();
+	var clang = 1;
+		var urlQuery = new URLSearchParams(window.location.search);
+		if (urlQuery.has('clang')) {
+			clang = urlQuery.get('clang');
+		}
 
-  $(linkMap).on('rex:selectLink', function (e, linkurl, linktext) {
-    e.preventDefault();
-    linkMap.close();
+	var linkMap = openLinkMap('', '&clang='+clang);
 
-    jQuery('.rex-url input').val(linkurl);
-    jQuery('.rex-protocol option:last').prop('selected', true);
-  });
+	$(linkMap).on('rex:selectLink', function (e, linkurl, linktext) {
+		e.preventDefault();
+		linkMap.close();
+		
+		jQuery('.rex-url input').val(linkurl);
+		jQuery('.rex-protocol option:last').prop('selected', true);
+	});
 }
 
 function rex_ckeditor_get_link_from_mediapool() {
