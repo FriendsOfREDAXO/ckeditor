@@ -1,6 +1,11 @@
 CKEditor AddOn - Changelog
 ==========================
 
+### Version 4.20.2 - 03.03.2023
+
+* Update auf CKEditor v4.16.2 Full
+* Fixed: Einbindung multipler CKEditoren in MBlock / Gridblock
+
 ### Version 4.16.2 - 12. August 2021
 
 * Update auf CKEditor v4.16.2 Full
