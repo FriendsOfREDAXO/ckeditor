@@ -1,0 +1,2 @@
+- immer das full-package nehmen
+- zusätzlich das plugin "stylesheetparser" immer mit beilegen

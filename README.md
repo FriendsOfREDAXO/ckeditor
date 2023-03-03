@@ -221,7 +221,7 @@ Links
 Hinweise
 --------
 
-* Getestet mit REDAXO 5.3 - 5.12.1
+* Getestet mit REDAXO 5.3 - 5.14.3
 * AddOn-Ordner lautet: `ckeditor`
 
 Changelog
