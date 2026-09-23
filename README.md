@@ -1,6 +1,8 @@
 CKEditor 4 AddOn für REDAXO
 ===========================
 
+🔔 AddOn-Entwicklung eingestellt. Verwende stattdessen: cke5 oder tinymce
+
 Der [CKEditor](http://ckeditor.com/) in Version 4 für REDAXO inkl. eines Beispielmoduls.
 
 Features
